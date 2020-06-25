@@ -7,3 +7,7 @@ RUN mkdir /tmp/.ansible
 RUN chmod 777 /tmp/.ansible
 RUN ln -s /tmp/.ansible /.ansible
 
+# add a default ansible user
+RUN useradd -ms /bin/bash ansible
+USER ansible
+WORKDIR /home/ansible
